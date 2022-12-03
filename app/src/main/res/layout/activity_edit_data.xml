@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/mainBackground"
+    android:layout_height="match_parent"
+    tools:context=".activity_edit_data"
+    tools:layout_editor_absoluteX="30dp"
+    tools:layout_editor_absoluteY="19dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/TopConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="200sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ConstraintlayoutButtonText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TopConstraint"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/videoauthor"
+            android:layout_width="175dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/updated_author"
+            android:textColor="@color/buttonColor"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/videoLength" />
+
+        <TextView
+            android:id="@+id/videoLink"
+            android:layout_width="175dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="32dp"
+            android:text="Updated Link: "
+            android:textColor="@color/buttonColor"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/videoauthor" />
+
+        <EditText
+            android:id="@+id/video_author_update"
+            android:layout_width="203dp"
+            android:layout_height="48dp"
+            android:hint="Enter Author Here"
+            android:inputType="text"
+            android:textColor="@color/buttonColor"
+            app:layout_constraintStart_toEndOf="@+id/videoauthor"
+            app:layout_constraintTop_toBottomOf="@+id/video_length_edit" />
+
+        <TextView
+            android:id="@+id/videoLength"
+            android:layout_width="175dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="32dp"
+            android:text="Updated Length:"
+            android:textColor="@color/buttonColor"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/videotitle" />
+
+        <TextView
+            android:id="@+id/delete_value_text"
+            android:layout_width="175dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="24dp"
+            android:text="Delete value by ID: "
+            android:textColor="@color/buttonColor"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/delete_id_input6"
+            android:layout_width="203dp"
+            android:layout_height="48dp"
+            android:hint="Enter Link Here"
+            android:inputType="text"
+            android:textColor="@color/buttonColor"
+            app:layout_constraintStart_toEndOf="@+id/videoLink"
+            app:layout_constraintTop_toBottomOf="@+id/video_author_update" />
+
+        <Button
+            android:id="@+id/apply_changes"
+            android:layout_width="187dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/buttonColor"
+            android:gravity="center"
+            android:text="Apply Changes"
+            android:textColor="#212121"
+            app:layout_constraintBottom_toBottomOf="@+id/delete_value_button"
+            app:layout_constraintEnd_toStartOf="@+id/delete_value_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/delete_value_text" />
+
+        <Button
+            android:id="@+id/delete_value_button"
+            android:layout_width="187dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="18dp"
+            android:backgroundTint="@color/buttonColor"
+            android:gravity="center"
+            android:text="Delete Value"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/apply_changes"
+            app:layout_constraintTop_toBottomOf="@+id/delete_id_input" />
+
+        <EditText
+            android:id="@+id/delete_id_input"
+            android:layout_width="203dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+
+            android:hint="Enter Value Here"
+            android:inputType="number"
+            android:textColor="@color/buttonColor"
+            app:layout_constraintStart_toEndOf="@+id/delete_value_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/video_id"
+            android:layout_width="175dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="ID Of Video:"
+            android:textColor="@color/buttonColor"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/apply_changes" />
+
+        <EditText
+            android:id="@+id/delete_id_input2"
+            android:layout_width="203dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:hint="@string/enter_id_here"
+            android:inputType="text"
+            android:textColor="@color/buttonColor"
+            app:layout_constraintStart_toEndOf="@+id/video_id"
+            app:layout_constraintTop_toBottomOf="@+id/delete_value_button" />
+
+        <TextView
+            android:id="@+id/videotitle"
+            android:layout_width="175dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="32dp"
+            android:text="Updated Title:"
+            android:textColor="@color/buttonColor"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/video_id" />
+
+        <EditText
+            android:id="@+id/video_length_edit"
+            android:layout_width="203dp"
+            android:layout_height="48dp"
+            android:hint="Enter Length Here"
+            android:inputType="numberDecimal"
+            android:textColor="@color/buttonColor"
+            app:layout_constraintStart_toEndOf="@+id/videoLength"
+            app:layout_constraintTop_toBottomOf="@+id/video_title_edit" />
+
+        <EditText
+            android:id="@+id/video_title_edit"
+            android:layout_width="203dp"
+            android:layout_height="48dp"
+            android:hint="Enter Title Here"
+            android:inputType="text"
+            android:textColor="@color/buttonColor"
+            app:layout_constraintStart_toEndOf="@+id/videotitle"
+            app:layout_constraintTop_toBottomOf="@+id/delete_id_input2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainBackground"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DownloadingExampleActivity">
+
+        <EditText
+            android:id="@+id/video_title_edit"
+            android:layout_width="198dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="204dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint=""
+            android:inputType="textUri"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/buttonColor"
+            android:textColorHint="@color/buttonColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.901"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progress_bar"
+            tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/video_link_edit"
+            android:layout_width="197dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="308dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint=""
+            android:inputType="textUri"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/buttonColor"
+            android:textColorHint="@color/buttonColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.897"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progress_bar"
+            tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/video_author_edit"
+            android:layout_width="198dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="264dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint=""
+            android:inputType="textUri"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/buttonColor"
+            android:textColorHint="@color/buttonColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.906"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progress_bar"
+            tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/video_length_edit"
+            android:layout_width="198dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="232dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint=""
+            android:inputType="textUri"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/buttonColor"
+            android:textColorHint="@color/buttonColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.901"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progress_bar"
+            tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/video_length_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="11dp"
+            android:text="Video Length: "
+
+            android:textColor="@color/buttonColor"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/video_length_edit"
+            app:layout_constraintTop_toTopOf="@+id/video_title_text" />
+
+        <TextView
+            android:id="@+id/video_link_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:text="Link of video: "
+
+            android:textColor="@color/buttonColor"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/video_link_edit"
+            app:layout_constraintTop_toBottomOf="@+id/video_author_text" />
+
+        <TextView
+            android:id="@+id/video_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:text="Title of Video: "
+            android:textColor="@color/buttonColor"
+
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/use_config_file" />
+
+        <TextView
+            android:id="@+id/video_author_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Author of Video: "
+            android:textColor="@color/buttonColor"
+            android:textSize="20dp"
+
+            app:layout_constraintEnd_toStartOf="@+id/video_author_edit"
+            app:layout_constraintTop_toBottomOf="@+id/video_length_text" />
+
+        <Button
+            android:id="@+id/btn_start_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/buttonColor"
+            android:text="@string/btn_start_download"
+            android:textColor="@color/mainBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_url"
+            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+        <Button
+            android:id="@+id/btn_stop_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="@color/buttonColor"
+            android:text="@string/btn_stop_download"
+            android:textColor="@color/mainBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_start_download"
+            tools:ignore="TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/et_url"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/url_hint"
+            android:inputType="textUri"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/buttonColor"
+            android:textColorHint="@color/buttonColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progress_bar"
+            tools:ignore="TextContrastCheck" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            android:textColor="@color/buttonColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_status"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/buttonColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_command_scroller" />
+
+        <ProgressBar
+            android:id="@+id/pb_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.423"
+            tools:visibility="visible" />
+
+        <ScrollView
+            android:id="@+id/tv_command_scroller"
+            android:layout_width="338dp"
+            android:layout_height="146dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fadeScrollbars="false"
+            android:nestedScrollingEnabled="true"
+            android:scrollbars="vertical"
+            android:textColor="@color/buttonColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_command_output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/btn_start_download"
+                android:minHeight="48dp"
+                android:textColor="@color/buttonColor"
+                android:textIsSelectable="true" />
+        </ScrollView>
+
+        <Switch
+            android:id="@+id/use_config_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:text="Use Config File?"
+            android:textColor="@color/buttonColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_stop_download" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
