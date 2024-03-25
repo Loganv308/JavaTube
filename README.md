@@ -2,6 +2,8 @@
 
 JavaTube is a Java developed mobile application that can download your favorite Youtube videos and save them locally on your device, along with saving the designated video metadata to a local Database. 
 
+This project utilizes ffmpeg to download videos from YouTube along with other platforms. 
+
 ## Features
 
 - Ability to download YouTube videos
@@ -19,19 +21,36 @@ JavaTube is a Java developed mobile application that can download your favorite 
 
 ```java
 
-public void onClick(View v)
+private void startDownload()
     {
+        boolean wasSuccessful = true;
+        FileIO fileIO = new FileIO();
+        if (downloading) {
+            Toast.makeText(DownloadingExampleActivity.this, "cannot start download. a download is already in progress", Toast.LENGTH_LONG).show();
+            return;
+        }
 
-        switch (v.getId())
-        {
-            case R.id.btn_start_download:
-                startDownload();
-                break;
-            case R.id.btn_stop_download:
-                try {
-                    YoutubeDL.getInstance().destroyProcessById(processId);
-                } catch (Exception e) {
-                    Log.e(TAG, e.toString());
-                }
-                break;
+        if (!isStoragePermissionGranted()) {
+            Toast.makeText(DownloadingExampleActivity.this, "grant storage permission and retry", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        String url = etUrl.getText().toString().trim();
+        if (TextUtils.isEmpty(url)) {
+            etUrl.setError(getString(R.string.url_error));
+            return;
+        }
+
+        YoutubeDLRequest request = new YoutubeDLRequest(url);
+        File youtubeDLDir = getDownloadLocation();
+        File config = new File(youtubeDLDir, "config.txt");
+
+        if (useConfigFile.isChecked() && config.exists()) {
+            request.addOption("--config-location", config.getAbsolutePath());
+        } else {
+            request.addOption("--no-mtime");
+            request.addOption("--downloader", "libaria2c.so");
+            request.addOption("--external-downloader-args", "aria2c:\"--summary-interval=1\"");
+            request.addOption("-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best");
+            request.addOption("-o", youtubeDLDir.getAbsolutePath() + "/sdcard/Download/%(title)s.%(ext)s");
         }
