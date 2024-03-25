@@ -1,4 +1,4 @@
-# Project Title
+# JavaTube Mobile Application
 
 JavaTube is a Java developed mobile application that can download your favorite Youtube videos and save them locally on your device, along with saving the designated video metadata to a local Database. 
 
