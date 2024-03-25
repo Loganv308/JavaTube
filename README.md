@@ -12,8 +12,8 @@ This project utilizes ffmpeg to download videos from YouTube along with other pl
 
 ## Prerequisites
 
-- Example: Java Development Kit (JDK) version X.X.X
-- Any external libraries or frameworks used
+- Android Studio (Development)
+- Latest Java SDK
 
 ## Usage
 
