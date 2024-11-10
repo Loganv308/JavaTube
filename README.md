@@ -2,13 +2,13 @@
 
 JavaTube is a Java developed mobile application that can download your favorite Youtube videos and save them locally on your device, along with saving the designated video metadata to a local Database. 
 
-This project utilizes ffmpeg to download videos from YouTube along with other platforms. 
+This project utilizes ffmpeg to download videos from YouTubes. 
 
 ## Features
 
 - Ability to download YouTube videos
 - Save videos to an internal database
-- Gather video metadata and store to an internal database
+- Gather video metadata and stores to an internal database
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ This project utilizes ffmpeg to download videos from YouTube along with other pl
 
 ## Usage
 
-- Here's an example code snippet from my project
+- Here's an example code snippet that handles the Download
 
 ```java
 
